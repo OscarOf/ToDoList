@@ -2,23 +2,23 @@ import React from "react";
 import Checkbox from "./Checkbox";
 
 const TaskList = props => {
-    // (C)
+    //Agregamos list a una props
     const { list, setList } = props;
     const onChangeStatus = e => {
         const { name, checked } = e.target;
-        // (E)
+        //al hacer clic en el elemento lo selecciona
         const updateList = list.map(item => ({
             ...item,
             done: item.id === name ? checked : item.done
         }));
         setList(updateList);
-    };
-    // (D)
+    };/* traemos el updatelist como parametro del método setList*/
+    // creamos la función para eliminar elementos de la lista mediante el filtro y actualizamos la lista con el método setList
     const onClickRemoveItem = e => {
         const updateList = list.filter(item => !item.done);
         setList(updateList);
     };
-    // (A-2)
+    //
     const chk = list.map(item => (
         <Checkbox key={item.id} data={item} onChange={onChangeStatus} />
     ));

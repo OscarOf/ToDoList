@@ -9,7 +9,7 @@ import Container from './componets/Container';
 function App() {
   return (
     <div className="App">
-      <Container/>      
+      <Container/>{/*Llamamos al contenedor principal donde se encuentran todos los componentes*/}
 
     </div>
   );
